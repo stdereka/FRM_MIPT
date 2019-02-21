@@ -19,3 +19,7 @@ def get_params_from_file_name(name: str):
     name = name[:name.rfind('.')]
     params = [float(p) for p in name.split('_')]
     return params
+
+
+def print_error(var, val, error):
+    print('{}={:.3}+-{:.3}'.format(var, val, error))
