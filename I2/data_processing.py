@@ -23,7 +23,7 @@ def plot_transparency_curves(measurements: list, output: str, legend_param: str 
         x, y = mes['data'].values.T
         plt.plot(x, y, linewidth=0.8)
         plt.xlim(mes['left_bound'], mes['right_bound'])
-        plt.ylim(0, 100)
+        plt.ylim(0, 70)
         if legend_param:
             legend_list.append(legend_param + '=' + str(mes[legend_param]) + unit)
 
