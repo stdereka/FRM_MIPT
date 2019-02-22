@@ -30,7 +30,7 @@ def plot_transparency_curves(measurements: list, output: str, legend_param: str 
     plt.grid(which='minor', ls='--', lw=0.5, c='grey')
     plt.grid(which='major', ls='-', lw=0.5, c='k')
     plt.xlabel('$\lambda, nm$')
-    plt.ylabel('$Transparency, \%$')
+    plt.ylabel('$Transmittance, \%$')
 
     if legend_param:
         plt.legend(legend_list)
@@ -159,7 +159,7 @@ def edge_frequency(progr, output):
     print_error('v_edge', pval[2], err[2])
     xminor_locator = MultipleLocator(1)
     yminor_locator = MultipleLocator(100)
-    xmajor_locator = MultipleLocator(20)
+    xmajor_locator = MultipleLocator(5)
     ymajor_locator = MultipleLocator(500)
     ax = plt.subplot()
     ax.xaxis.set_minor_locator(xminor_locator)
