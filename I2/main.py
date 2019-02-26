@@ -61,3 +61,7 @@ print()
 print('Stage 6. Computing dissociation energy using Shponer extrapolation method...')
 shponer_extrapolation((progr1, progr2), 'results/shponer.pdf')
 print()
+
+print('Stage 7. Drawing Morze curve...')
+plot_morze(3476.5, 2.155, 'results/morze.pdf')
+print()

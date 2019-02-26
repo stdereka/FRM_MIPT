@@ -176,3 +176,27 @@ def edge_frequency(progr, output):
     plt.ylabel(r'$\nu, см^{-1}$')
     plt.savefig(output)
     plt.close()
+
+
+def plot_morze(d, beta, output=None):
+    morze = lambda r: d*(1-np.exp(-beta*r))**2
+    x = np.arange(-0.4, 6, 0.01)
+    xminor_locator = MultipleLocator(0.2)
+    yminor_locator = MultipleLocator(300)
+    xmajor_locator = MultipleLocator(1)
+    ymajor_locator = MultipleLocator(1500)
+    ax = plt.subplot()
+    ax.xaxis.set_minor_locator(xminor_locator)
+    ax.yaxis.set_minor_locator(yminor_locator)
+    ax.xaxis.set_major_locator(xmajor_locator)
+    ax.yaxis.set_major_locator(ymajor_locator)
+    plt.plot(x, morze(x))
+    plt.xlim(-0.5, 5)
+    plt.ylim(0, 6000)
+    plt.ylabel(r'$U(r-r_e), sm^{-1}$')
+    plt.xlabel(r'$r-r_e, \AA$')
+    plt.grid(which='minor', ls='--', lw=0.5, c='grey')
+    plt.grid(which='major', ls='-', lw=0.5, c='k')
+    #plt.show()
+    plt.savefig(output)
+
